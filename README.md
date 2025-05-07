@@ -1,4 +1,4 @@
-# mailer-api
+# notification-service
 
 > Простой API для отправки email-уведомлений через SMTP.
 
