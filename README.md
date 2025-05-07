@@ -9,3 +9,7 @@
 - FastAPI
 - HTML / CSS / JS — фронтенд формы
 - SMTP — для отправки сообщений
+
+## 📸 Скриншот
+
+![image](https://github.com/user-attachments/assets/2e3435a9-25b2-42a1-aeae-2a674c402989)
