@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отправка сообщений</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <form id="message-form" class="message">
+        <h1>Отправить сообщение</h1>
+
+        <div class="input-group">
+            <input type="text" name="email" placeholder="Введите email" required>
+        </div>
+
+        <div class="input-group">
+            <textarea name="message" placeholder="Введите ваше сообщение..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Отправить</button>
+
+        <!-- Блок для отображения статуса -->
+        <div id="response" style="margin-top: 10px; color: green;"></div>
+    </form>
+
+    <script>
+        document.getElementById("message-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Останавливаем стандартную отправку формы
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch("/send", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.status;
+                if (data.status === "Сообщение отправлено") {
+                    form.reset(); // Очистка формы после успешной отправки
+                }
+            })
+            .catch(error => {
+                document.getElementById("response").innerText = "Ошибка при отправке";
+                console.error("Ошибка:", error);
+            });
+        });
+    </script>
+</body>
+</html>

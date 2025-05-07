@@ -1,0 +1,70 @@
+body {
+    background-image: url("/media/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(239, 237, 255);
+    background-color: rgb(195, 203, 248);
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.message {
+    display: flex;
+    flex-direction: column; /* чтобы h1 был сверху, а остальной контент ниже */
+    justify-content: flex-start; /* контент начнётся с верха */
+    align-items: center;
+    height: 600px;
+    width: 800px;
+    background-color: rgb(230, 234, 255);
+    border-radius: 20px;
+    overflow: hidden; /* чтобы скругления углов работали */
+}
+
+.input-group {
+    width: 80%;
+    margin: 15px 0;
+}
+
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 300px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
